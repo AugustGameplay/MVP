@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-def inicio_registro(request):
+def inicio_sesion(request):
     """
     Vista que maneja tanto el inicio de sesión como el registro de usuarios.
     """
@@ -41,7 +41,7 @@ def inicio_registro(request):
                 messages.success(request, 'Registro exitoso. Ahora puedes iniciar sesión.')
                 return redirect('inicio_registro')  # Redirige para iniciar sesión
 
-    return render(request, 'inicio_registro.html')
+    return render(request, 'login.html')
 
 def cerrar_sesion(request):
     """
@@ -49,4 +49,10 @@ def cerrar_sesion(request):
     """
     logout(request)
     messages.info(request, 'Has cerrado sesión exitosamente.')
-    return redirect('inicio_registro')
+    return redirect('inicio_sesion')
+def registro(request):
+    return render(request, 'registro.html')
+
+# Vista para la página principal (index)
+def index(request):
+    return render(request, 'index.html')

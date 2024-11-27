@@ -20,5 +20,10 @@ from apps import views  # Asegúrate de que exista la aplicación `apps` con las
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio_registro, name='inicio_registro'),  # Página principal (inicio y registro)
+    path('login/', views.inicio_sesion, name='inicio_sesion'),  # Ruta para la página de inicio de sesión
+    path('registro/', views.registro, name='registro'),  # Ruta para la página de registro
+    path('', views.inicio_sesion, name='index'),  # Ruta principal que redirige al inicio de sesión
 ]
+
+
+

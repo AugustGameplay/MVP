@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Ventas - Inicio y Registro</title>
+    <title>Gestor de Ventas - Registro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,9 +28,8 @@
             flex-direction: column;
         }
         input[type="text"],
-        input[type="password"],
         input[type="email"],
-        button {
+        input[type="password"] {
             padding: 10px;
             margin: 10px 0;
             font-size: 16px;
@@ -38,13 +37,17 @@
             border-radius: 5px;
         }
         button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             background-color: #008fff;
             color: #fff;
-            border: none;
             cursor: pointer;
         }
         button:hover {
-            background-color: #008fff;
+            background-color: #006bb3;
         }
         .switch {
             text-align: center;
@@ -60,22 +63,7 @@
     </style>
 </head>
 <body>
-    <!-- Contenedor de Inicio de Sesión -->
-    <div class="container" id="login-container">
-        <h1>Gestor de Ventas</h1>
-        <h2>Inicio de Sesión</h2>
-        <form>
-            <input type="text" placeholder="Usuario" required>
-            <input type="password" placeholder="Contraseña" required>
-            <button type="button" onclick="window.location.href='index.html';">Iniciar Sesión</button>
-        </form>
-        <div class="switch">
-            <p>¿No tienes una cuenta? <a href="#registro" onclick="showRegister()">Regístrate aquí</a></p>
-        </div>
-    </div>
-
-    <!-- Contenedor de Registro -->
-    <div class="container" id="register-container" style="display: none;">
+    <div class="container">
         <h1>Gestor de Ventas</h1>
         <h2>Registro</h2>
         <form>
@@ -86,20 +74,8 @@
             <button type="submit">Registrarse</button>
         </form>
         <div class="switch">
-            <p>¿Ya tienes una cuenta? <a href="#login" onclick="showLogin()">Inicia sesión aquí</a></p>
+            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
         </div>
     </div>
-
-    <script>
-        // Funciones para alternar entre Login y Registro
-        function showRegister() {
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('register-container').style.display = 'block';
-        }
-        function showLogin() {
-            document.getElementById('register-container').style.display = 'none';
-            document.getElementById('login-container').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
