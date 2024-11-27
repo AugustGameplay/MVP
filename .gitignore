@@ -1,0 +1,22 @@
+#Cache files
+*.pyc
+__pycache__/
+.vscode/
+.vs/
+
+#Migraciones
+migrations/**
+
+#Media files
+media/**
+media_cdn/**
+
+#Environment files
+*.env
+.env*
+
+#SQLite DB
+*.sqlite3
+
+# Especifico de configuración
+inicio.bat
