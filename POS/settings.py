@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'coreapi',
+    'apps', 
 ]
 
 MIDDLEWARE = [
@@ -89,3 +92,7 @@ STATIC_URL = '/static/'
 
 # Configuración de claves principales
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}

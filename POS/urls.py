@@ -15,15 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from apps import views  # Asegúrate de que exista la aplicación `apps` con las vistas definidas
+from django.urls import path,include
+from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.inicio_sesion, name='inicio_sesion'),  # Ruta para la página de inicio de sesión
-    path('registro/', views.registro, name='registro'),  # Ruta para la página de registro
-    path('', views.inicio_sesion, name='index'),  # Ruta principal que redirige al inicio de sesión
+    path('apps/v1/', include('apps.urls')),
+    path('docs/', include_docs_urls(title= 'Api Documentation'))
 ]
-
-
-
